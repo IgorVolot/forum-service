@@ -5,15 +5,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Getter
 @EqualsAndHashCode (of = "id")
 @NoArgsConstructor
-public class Forum {
+public class Post {
     private String id;
     @Setter
     private String title;
 
-    public Forum(String id, String title) {
+    private Map<String, String> comment = new HashMap<>();
+
+    public Post(String id, String title) {
         this.id = id;
         this.title = title;
     }
